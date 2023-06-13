@@ -1,2 +1,2 @@
 # Netflix-Clone
-Its dynamic website using html , css , API and javascript
+Its dynamic website using HTML , CSS , API and Javascript.
