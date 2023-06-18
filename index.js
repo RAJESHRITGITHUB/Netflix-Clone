@@ -8,11 +8,9 @@ const apiPaths = {
     fetchAllCategories: `${apiEndpoint}/genre/movie/list?api_key=${apikey}`,
     fetchMoviesList: (id) => `${apiEndpoint}/discover/movie?api_key=${apikey}&with_genres=${id}`,
     fetchTrending:`${apiEndpoint}/trending/all/day?api_key=${apikey}&language=en-US`,
-    searchOnYoutube: (query) => `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&key=AIzaSyC0SZJkHFX-fQ7NrsxdI4l4mGwYuY4l7P8`
+    searchOnYoutube: (query) => `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&key=AIzaSyAFmkYDrEpfGEaM0mRH28vpG2l94d_G2Nc`
 }
-
-
-// Boots up the app
+// Boots up the app   
 function init() {
     fetchTrendingMovies();
     fetchAndBuildAllSections();
@@ -80,7 +78,7 @@ function fetchAndbuildMovieSection(fetchUrl, categoryName){
         }
         return movies;
     })
-    .catch(err=>console.error(err))
+    .catch(err=>console.error(err)) 
 }
 
 function buildMoviesSection(list, categoryName){
@@ -113,7 +111,7 @@ function buildMoviesSection(list, categoryName){
 
 function searchMovieTrailer(movieName, iframId) {
     if (!movieName) return;
-
+    // AIzaSyAFmkYDrEpfGEaM0mRH28vpG2l94d_G2Nc     api trailer
     fetch(apiPaths.searchOnYoutube(movieName))
     .then(res => res.json())
     .then(res => {
